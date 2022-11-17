@@ -1,0 +1,23 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+ }
+ 
+ a {
+    color: black;
+    text-decoration: none;
+ }
+ body {
+    font-family: var(--font-roboto); /* llama a variable de fuente  */
+    background-color: var(--light-grey);
+ }
+ 
+ li {
+ list-style: none;
+ }
+
+ .text-center {
+   text-align: center;
+ }
+

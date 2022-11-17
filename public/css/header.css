@@ -1,0 +1,51 @@
+/* HEADER */
+header {
+    background-color: var(--yellow);
+    font-size: var(--paragraph);
+    padding-bottom: 10px;
+ }
+ 
+ header .burger-menu {
+    background-color: var(--light_blue);
+    color: white;
+    width: 15px;
+    padding: 7px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto 0;
+    /* top right bottom left */
+    /* top right-left bottom */
+ }
+ 
+ header .logo {
+    width: 130px;
+    margin-left: 25px;
+    padding-top: 25px;
+    margin-bottom: 10px;
+ }
+ 
+ .search {
+    border: 1px solid var(--dark-grey);
+    background-color: white;
+    padding:5px 25px;
+    border-radius: 5px;
+    color:grey;
+ }
+ /* search bar */
+ 
+ header .search-bar {
+    display: inline-block;
+    margin-left: 15px;
+ }
+ 
+ /* Quota */
+ header .quota {
+    text-align: center;
+    margin: 10px 0 20px
+ }
+ /* top list, OSEA BARRA DE NAVEGACION */
+ 
+ header nav ul#top-list {
+    margin-bottom: 15px;
+ }
+ /* END HEADER */
