@@ -1,64 +1,256 @@
+/*header*/
+
+nav {
+    display: none;
+}
+
 /*banner*/
 
-.home .banner { /*display none, para sacar el elemento*/
+.home .banner { 
+    /*display none, para sacar el elemento*/
+   display: none;
+}
+
+/*Main*/
+
+main.home {
+    margin: 0 auto;
+    width: 90%;
+}
+
+/*section*/
+
+.home .section-title {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.home .card {
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.home .card .card-content {
+    border-top: solid var(--light-grey);
+    padding: 15px;
+    position: relative; /*al contenedor padre hay q ponerle esto primero*/
+}
+
+.home .card .card-content .icon-truck { /*circulo del camion*/
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    width: fit-content; /*para que ese borde encierre solo el camion*/
+    padding: 5px;
+    position: absolute; /*con esto se moveria el camion, el elemento*/
+    top: -15px;
+    right: 20px;
+}
+
+.home .card .card-content .icon-truck i {
+    color: var(--green);
+    font-size: 16px;
+}
+
+.home .card .card-content .product-info {
+    display: flex;
+    /*justify-content: space-between; separo el precio del off en los extremos*/
+    padding-top: 5px;
+}
+
+.home .card .card-content .product-info p:nth-child(1) {
+    flex-grow: 0.3; /* n° entre 0 y 1--0.3 seria el 30% */
+}
+
+.home .card .card-content .product-info p:nth-child(2) {
+    color: var(--green);
+    font-size: 14px;
+    flex-grow: 0.7; /* n° entre 0 y 1--0.3 seria el 70% */
+}
+
+.home .card .card-content .product-name {
     display: none;
- }
+    color: var(--dark-grey);
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+/*media queries, tablet*/
+/*home*/
+
+@media (min-width: 361px) {
+    .home .card { /*si el primer parametro es 0, tira sombra en los 4 lados*/
+        box-shadow: 0px 0px 10px rgb(100, 100, 100); /*3er parametro hace q se difumine*/
+    }
+    .home .card .card-content .product-name {
+        display: block;
+    }
+
+
+    
+}
+
+@media (min-width: 769px) {
+    /*header*/
+
+    header .logo {
+        width: 250px;
+    }
  
- /*Main*/
+    .burger-menu {
+        display: none;
+    }
  
- main.home {
-     margin: 0 auto;
-     width: 90%;
- }
+    .home .banner, .historial { 
+        display: block; 
+     }
  
- /*section*/
+     .home .historial {
+         font-family: var(--font-roboto);
+         text-align: center;
+         margin-top: 10px;
+     }
  
- .home .section-title {
-     margin: 25px 0;
-     text-align: center;
- }
+     nav {
+        /*display: block;*/
+        display: flex;
+        justify-content: space-between;
+     }
  
- .home .card {
-     background-color: white;
-     margin-bottom: 10px;
- }
+     nav ul {
+         display: flex;
+     }
  
- .home .card .card-content {
-     border-top: solid var(--light-grey);
-     padding: 15px;
- }
+     nav .buttom-list ul, li, i{
+        margin: 0 6px;
+        font-size: var(--discounts-descriptions);
+     }
  
- .home .card .card-content .icon-truck {
-     border: 1px solid var(--green);
-     border-radius: 50%;
-     width: fit-content;
-     width: -moz-fit-content;
-     padding: 5px;
- }
+     header .top-list {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+     }
  
- .home .card .card-content .icon-truck i {
-     color: var(--green);
-     font-size: 16px;
- }
-/*  
- .home .card .card-content .product-info p:nth-child(1){
+     .top-list .search-bar input{
+         width: 250px;
+         height: 24px;
+         border: none;
+     }
  
- }
-  */
- .home .card .card-content .product-info p:nth-child(1){
-     color: var(--green);
-     font-size: 14px;
- }
+     .top-list .search-bar input, p, i {
+         font-size: var(--discounts-descriptions);
+     }
  
- .home .card .card-content .product-name {
-     color: var(--dark-grey);
-     font-size: 15px;
-     
- }
- /*media queries, desktop*/
- 
- @media (min-width: 992px) {
-     .home .banner { 
-         display: block;
-        } 
- }
+     .top-list button {
+         padding: 1px 0;
+     }
+
+     /*Productos*/
+
+    main.home section {
+        display: flex;
+        /* flex-wrap: wrap; */
+        max-width: 49%;
+        display: inline-block;
+    }
+
+    main.home section article.card {
+        margin: auto;
+        margin-top: 20px;
+        max-width: 80%;
+    }
+
+    .home .section-title {
+        display: none; 
+    }
+
+
+
+
+}
+
+/* media queries */
+/* DESKTOP */
+@media (min-width: 992px) {
+     /*header*/
+    
+     .logo {
+        margin-right: 80px;
+    }
+
+    header .top-list {
+        justify-content: start; 
+    } 
+
+    .top-list .search-bar input{
+        width: 400px;
+    }
+
+    .top-list .quota {
+        margin-left: 50px;
+    }
+
+    /*home section*/
+
+    main.home section {
+        max-width: 24%;
+    }
+
+    main.home section article.card {
+        margin-right: 10px;
+    }
+
+    /*Hover sobre el camioncito*/
+    .home .card .card-content .icon-truck i {
+        transition: transform 500ms;
+    }
+
+    .home .card .card-content .icon-truck i:hover {
+        /*Un ángulo positivo representa un rotación en el sentido del reloj y un ángulo negativo representa una rotación en sentido contrario a las agujas del reloj.*/
+        transform: rotate(-90deg);
+    }
+    
+    /*Hover sobre la descripción del producto*/
+    .home .card .card-content .product-name {
+        /*opacity logra "transparencia" diferente a display none*/
+        opacity: 0;
+        transition: 500ms;
+    }
+
+    .home .card .card-content .product-name:hover {
+        opacity: 100%;
+    }
+
+    /*Hover-sobre la sombra del producto*/
+    .home .card { 
+        box-shadow: none; 
+        transition: box-shadow 500ms;
+    }
+
+    .home .card:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100); 
+    }
+
+    /*responsive footer*/
+
+    footer {
+        display: flex;
+        flex-direction: row;
+    } 
+
+    /*Hover sobre el color de los iconos dentro del footer*/
+    footer article.footer-article i {
+        transition: color 500ms;
+    }
+    
+    footer article.footer-article i:hover {
+        color:  var(--green);
+    }
+
+    footer .copy { 
+        position: absolute;
+        margin-top: 150px; 
+    }
+
+
+}
