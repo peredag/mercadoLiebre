@@ -249,7 +249,8 @@ main.home {
 
     footer .copy { 
         position: absolute;
-        margin-top: 150px; 
+        bottom: -280px;
+       
     }
 
 
