@@ -1,0 +1,109 @@
+/*Estilos para register y login*/
+
+.form-container {
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+
+h2 {
+font-size: var(--title);
+margin: 15px 0;
+} 
+
+.input-container {
+margin: 22px 0;
+}
+
+.estilo-input {
+/* font-size: 20px; */
+width: 80%;
+height: 25px;
+border: none;
+border-radius: 4px;
+}
+
+.input-container input:focus {
+    outline: none;
+} 
+
+.msj-error {
+display: none;
+}
+
+.form-title {
+text-align: center;
+margin-top: 28px;
+font-size: var(--prices);
+}
+
+.input-container-usuario label {
+    margin: 0 8px;
+}
+
+.input-container-intereses {
+    margin: 10px 0;
+}
+
+.input-container-intereses label input {
+    margin: 8px 0;
+}
+
+.input-file-container label {
+    font-size: var(--discounts-descriptions); 
+    border: solid 1px black;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.input-file-container input {
+    display: none;
+}
+
+.button-container {
+    margin: 20px 0;
+    
+}
+
+.button {
+    font-size: var(--prices); 
+    font-family: var(--font-roboto);
+    border: none;
+    border-radius: 4px;
+    background-color: var(--light_blue);
+    color: var(--light-grey);
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+/*Media-queries-tablet*/
+@media (min-width: 768px) {
+
+    .estilo-input {
+        width: 70%;
+        height: 30px;
+    }
+}
+
+
+/*Media-queries-desktop*/
+@media (min-width: 1200px) {
+
+    .estilo-input {
+        width: 60%;
+        height: 35px;
+    }
+
+    .button-container {
+        transition: background-color 500ms;
+    }
+
+    .button:hover {
+        background-color: #0022AA;
+    }
+}

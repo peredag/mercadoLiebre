@@ -12,6 +12,14 @@ app.get('/', function (req, res){
     res.sendFile(path.join(__dirname, './views/home.html'))
 })
 
+app.get('/register', function (req, res){
+    res.sendFile(path.join(__dirname, './views/register.html'))
+})
+
+app.get('/login', function (req, res){
+    res.sendFile(path.join(__dirname, './views/login.html'))
+})
+
 
 // levanto serv-------------
 app.listen(PORT, () => console.log(` 
